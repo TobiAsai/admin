@@ -62,4 +62,10 @@ class ArticleController(private val articleService: ArticleService) {
         articleService.create(request)
         return CreateResponse(code = 200, message = "Created successfully", data = request)
     }
+
+    @DeleteMapping("/deleteBatch")
+    fun deleteBatch(@RequestBody ids: List<Long>): DeleteResponse {
+        articleService.deleteBatch(ids)
+        return DeleteResponse(code = 200, message = "Deleted successfully")
+    }
 }

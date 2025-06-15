@@ -14,4 +14,6 @@ interface EmployeeService {
     fun modify(id: Long, update: Employee)
 
     fun create(request: CreateEmployeeRequest)
+
+    fun deleteBatch(ids: List<Long>)
 }

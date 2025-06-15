@@ -36,4 +36,8 @@ class ClassificationServiceImpl(private val classificationRepository: Classifica
         )
         classificationRepository.save(newClass)
     }
+
+    override fun deleteBatch(ids: List<Long>) {
+        classificationRepository.deleteAllById(ids)
+    }
 }

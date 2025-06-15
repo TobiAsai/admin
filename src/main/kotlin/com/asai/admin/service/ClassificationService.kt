@@ -13,4 +13,6 @@ interface ClassificationService {
     fun modify(id: Long, update: Classification)
 
     fun create(request: CreateClassificationRequest)
+
+    fun deleteBatch(ids: List<Long>)
 }

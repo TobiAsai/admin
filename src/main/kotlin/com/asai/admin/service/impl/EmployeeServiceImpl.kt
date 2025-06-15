@@ -49,4 +49,8 @@ class EmployeeServiceImpl(private val employeeRepository: EmployeeRepository, pr
         employeeRepository.save(newEmployee)
     }
 
+    override fun deleteBatch(ids: List<Long>) {
+        employeeRepository.deleteAllById(ids)
+    }
+
 }

@@ -51,4 +51,10 @@ class EmployeeController(
         val employee = employeeService.create(request)
         return CreateResponse(code = 200, message = "Employee created successfully", data = employee)
     }
+
+    @DeleteMapping("/deleteBatch")
+    fun deleteBatch(@RequestBody ids: List<Long>): DeleteResponse {
+        employeeService.deleteBatch(ids)
+        return DeleteResponse(code = 200, message = "Employee deleted successfully")
+    }
 }

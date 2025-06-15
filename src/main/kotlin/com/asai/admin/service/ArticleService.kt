@@ -13,4 +13,6 @@ interface ArticleService {
     fun modify(id: Long, update: Article)
 
     fun create(request: CreateArticleRequest)
+
+    fun deleteBatch(ids: List<Long>)
 }

@@ -53,4 +53,8 @@ class ArticleServiceImpl(private val articleRepository: ArticleRepository, priva
 
         articleRepository.save(newArticle)
     }
+
+    override fun deleteBatch(ids: List<Long>) {
+        articleRepository.deleteAllById(ids)
+    }
 }

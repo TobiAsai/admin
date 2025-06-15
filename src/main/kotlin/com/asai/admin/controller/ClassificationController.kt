@@ -51,4 +51,9 @@ class ClassificationController(
         return CreateResponse(code = 200, message = "Classification created successfully", data = classification)
     }
 
+    @DeleteMapping("/deleteBatch")
+    fun deleteBatch(@RequestBody ids: List<Long>): DeleteResponse {
+        classificationService.deleteBatch(ids)
+        return DeleteResponse(code = 200, message = "Classification deleted successfully")
+    }
 }
